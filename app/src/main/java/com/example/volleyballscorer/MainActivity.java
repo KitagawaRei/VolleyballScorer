@@ -9,61 +9,74 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Declare variables for the buttons and EditText
-    Button addBtn, removeBtn;
-    EditText itemQuanEt;
+    // Declare variables for HOME and AWAY buttons and EditTexts
+    Button addBtnHome, removeBtnHome, addBtnAway, removeBtnAway;
+    EditText homeScore, awayScore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main); // Ensure this matches your layout file
+        setContentView(R.layout.activity_main);
 
-        // Initialize the views by finding them by their ID
-        addBtn = findViewById(R.id.addBtn);
-        removeBtn = findViewById(R.id.removeBtn);
-        itemQuanEt = findViewById(R.id.itemQuanEt);
+        // Initialize HOME team views
+        addBtnHome = findViewById(R.id.addBtnHome);
+        removeBtnHome = findViewById(R.id.removeBtnHome);
+        homeScore = findViewById(R.id.homeScore);
 
-        // Set the initial value in the EditText (if not set in XML)
-        itemQuanEt.setText("0");
+        // Initialize AWAY team views
+        addBtnAway = findViewById(R.id.addBtnAway);
+        removeBtnAway = findViewById(R.id.removeBtnAway);
+        awayScore = findViewById(R.id.awayScore);
 
-        // Set an OnClickListener for the Add Button to increment the value
-        addBtn.setOnClickListener(new View.OnClickListener() {
+        // Set initial values for both teams
+        homeScore.setText("0");
+        awayScore.setText("0");
+
+        // Add Button for HOME team
+        addBtnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Get the current value from the EditText
-                String currentValStr = itemQuanEt.getText().toString();
-
-                // Parse it to an integer
-                int currentValue = Integer.parseInt(currentValStr);
-
-                // Increment the value
-                currentValue++;
-
-                // Set the updated value back to the EditText
-                itemQuanEt.setText(String.valueOf(currentValue));
+                int currentHomeScore = Integer.parseInt(homeScore.getText().toString());
+                currentHomeScore++;
+                homeScore.setText(String.valueOf(currentHomeScore));
             }
         });
 
-        // Set an OnClickListener for the Remove Button to decrement the value
-        removeBtn.setOnClickListener(new View.OnClickListener() {
+        // Remove Button for HOME team
+        removeBtnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Get the current value from the EditText
-                String currentValStr = itemQuanEt.getText().toString();
-
-                // Parse it to an integer
-                int currentValue = Integer.parseInt(currentValStr);
-
-                // Decrement the value, but ensure it doesn't go below 1
-                if (currentValue > 1) {
-                    currentValue--;
+                int currentHomeScore = Integer.parseInt(homeScore.getText().toString());
+                if (currentHomeScore > 0) {
+                    currentHomeScore--;
                 } else {
-                    // Optional: Show a message if user tries to go below 1
-                    Toast.makeText(MainActivity.this, "Quantity can't be less than 1", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Score can't be less than 0", Toast.LENGTH_SHORT).show();
                 }
+                homeScore.setText(String.valueOf(currentHomeScore));
+            }
+        });
 
-                // Set the updated value back to the EditText
-                itemQuanEt.setText(String.valueOf(currentValue));
+        // Add Button for AWAY team
+        addBtnAway.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int currentAwayScore = Integer.parseInt(awayScore.getText().toString());
+                currentAwayScore++;
+                awayScore.setText(String.valueOf(currentAwayScore));
+            }
+        });
+
+        // Remove Button for AWAY team
+        removeBtnAway.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int currentAwayScore = Integer.parseInt(awayScore.getText().toString());
+                if (currentAwayScore > 0) {
+                    currentAwayScore--;
+                } else {
+                    Toast.makeText(MainActivity.this, "Score can't be less than 0", Toast.LENGTH_SHORT).show();
+                }
+                awayScore.setText(String.valueOf(currentAwayScore));
             }
         });
     }
