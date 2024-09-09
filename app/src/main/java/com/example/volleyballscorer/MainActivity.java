@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         itemQuanEt = findViewById(R.id.itemQuanEt);
 
         // Set the initial value in the EditText (if not set in XML)
-        itemQuanEt.setText("1");
+        itemQuanEt.setText("0");
 
         // Set an OnClickListener for the Add Button to increment the value
         addBtn.setOnClickListener(new View.OnClickListener() {
