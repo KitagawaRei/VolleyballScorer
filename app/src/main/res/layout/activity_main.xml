@@ -4,7 +4,20 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <!-- Team HOME Section -->
+    <TextView
+        android:id="@+id/servingTeam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/homeLabel"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="133dp"
+        android:layout_marginTop="130dp"
+        android:text="Home is serving"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
     <TextView
         android:id="@+id/homeLabel"
         android:layout_width="wrap_content"
@@ -17,13 +30,14 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true" />
 
+    <!-- Team AWAY Section -->
     <RelativeLayout
         android:id="@+id/homeScoreLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/homeLabel"
-        android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="58dp"
         android:layout_marginEnd="16dp">
 
         <Button
@@ -56,7 +70,6 @@
             android:backgroundTint="@color/grey" />
     </RelativeLayout>
 
-    <!-- Team AWAY Section -->
     <TextView
         android:id="@+id/awayLabel"
         android:layout_width="wrap_content"
@@ -67,6 +80,7 @@
         android:layout_below="@id/homeScoreLayout"
         android:layout_marginTop="50dp"
         android:layout_alignParentStart="true" />
+
 
     <RelativeLayout
         android:id="@+id/awayScoreLayout"
