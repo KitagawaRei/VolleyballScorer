@@ -8,11 +8,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
     private EditText homeScore, awayScore;
     private Button addBtnHome, removeBtnHome, addBtnAway, removeBtnAway;
-    private TextView servingTeam;
+    private TextView servingTeam, p1, p2, p3, p4, p5, p6;
     private boolean isHomeServing = true; // Home starts serving by default
+    private int[] playerPositions = {1, 2, 3, 4, 5, 6}; // Initialize player positions
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +29,19 @@ public class MainActivity extends AppCompatActivity {
         addBtnAway = findViewById(R.id.addBtnAway);
         removeBtnAway = findViewById(R.id.removeBtnAway);
         servingTeam = findViewById(R.id.servingTeam);
+        p1 = findViewById(R.id.p1);
+        p2 = findViewById(R.id.p2);
+        p3 = findViewById(R.id.p3);
+        p4 = findViewById(R.id.p4);
+        p5 = findViewById(R.id.p5);
+        p6 = findViewById(R.id.p6);
+
+        p1.setOnClickListener(this);
+        p2.setOnClickListener(this);
+        p3.setOnClickListener(this);
+        p4.setOnClickListener(this);
+        p5.setOnClickListener(this);
+        p6.setOnClickListener(this);
 
         updateServingTeam();
 
@@ -35,24 +51,25 @@ public class MainActivity extends AppCompatActivity {
         removeBtnAway.setOnClickListener(v -> removeScore(false));
     }
 
-    // Update the score based on which team scored and check if the serve should switch
     private void updateScore(boolean isHomeScoring) {
         int home = Integer.parseInt(homeScore.getText().toString());
         int away = Integer.parseInt(awayScore.getText().toString());
 
         if (isHomeScoring) {
             if (isHomeServing) {
-                home++; // Home scores while serving, continues to serve
+                home++;
             } else {
-                home++; // Home scores while receiving, takes over the serve
+                home++;
                 isHomeServing = true;
+                rotatePlayers();
             }
         } else {
             if (!isHomeServing) {
-                away++; // Away scores while serving, continues to serve
+                away++;
             } else {
-                away++; // Away scores while receiving, takes over the serve
+                away++;
                 isHomeServing = false;
+                rotatePlayers();
             }
         }
 
@@ -61,13 +78,11 @@ public class MainActivity extends AppCompatActivity {
 
         updateServingTeam();
 
-        // Check for match point (first to 25 and must lead by 2)
         if (checkMatchPoint(home, away)) {
             Toast.makeText(this, (home > away ? "Home" : "Away") + " wins!", Toast.LENGTH_SHORT).show();
         }
     }
 
-    // Remove points (with a lower bound of 0)
     private void removeScore(boolean isHome) {
         int home = Integer.parseInt(homeScore.getText().toString());
         int away = Integer.parseInt(awayScore.getText().toString());
@@ -81,16 +96,50 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    // Update the serving team text view
     private void updateServingTeam() {
         servingTeam.setText(isHomeServing ? "Home is serving" : "Away is serving");
     }
 
-    // Check for match point (first to 25 with 2-point lead)
     private boolean checkMatchPoint(int home, int away) {
-        if ((home >= 25 || away >= 25) && Math.abs(home - away) >= 2) {
-            return true; // Match point reached
-        }
-        return false;
+        return (home >= 25 || away >= 25) && Math.abs(home - away) >= 2;
     }
+
+    private void rotatePlayers() {
+        int temp = playerPositions[0];
+        System.arraycopy(playerPositions, 1, playerPositions, 0, playerPositions.length - 1);
+        playerPositions[playerPositions.length - 1] = temp;
+
+        p1.setText(String.valueOf(playerPositions[0]));
+        p2.setText(String.valueOf(playerPositions[1]));
+        p3.setText(String.valueOf(playerPositions[2]));
+        p4.setText(String.valueOf(playerPositions[3]));
+        p5.setText(String.valueOf(playerPositions[4]));
+        p6.setText(String.valueOf(playerPositions[5]));
+    }
+
+    @Override
+    public void onClick(View v) {
+        // Handle clicks on player number views to allow input
+        switch (v.getId()) {
+            case R.id.p1:
+                // Show dialog or input for editing player number 1
+                break;
+            case R.id.p2:
+                // Show dialog or input for editing player number 2
+                break;
+            case R.id.p3:
+                // Show dialog or input for editing player number 3
+                break;
+            case R.id.p4:
+                // Show dialog or input for editing player number 4
+                break;
+            case R.id.p5:
+                // Show dialog or input for editing player number 5
+                break;
+            case R.id.p6:
+                // Show dialog or input for editing player number 6
+                break;
+        }
+    }
+
 }

@@ -4,8 +4,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
-    <!-- Team HOME Section -->
     <TextView
         android:id="@+id/servingTeam"
         android:layout_width="wrap_content"
@@ -30,7 +28,6 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true" />
 
-    <!-- Team AWAY Section -->
     <RelativeLayout
         android:id="@+id/homeScoreLayout"
         android:layout_width="match_parent"
@@ -81,7 +78,6 @@
         android:layout_marginTop="50dp"
         android:layout_alignParentStart="true" />
 
-
     <RelativeLayout
         android:id="@+id/awayScoreLayout"
         android:layout_width="match_parent"
@@ -109,7 +105,7 @@
             android:text="0"
             android:textAlignment="center"
             android:textColor="@android:color/black"
-            android:textSize="20sp"/>
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/addBtnAway"
@@ -121,4 +117,122 @@
             android:backgroundTint="@color/grey" />
     </RelativeLayout>
 
+    <TextView
+        android:id="@+id/courtLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Court Rotation"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_below="@id/awayScoreLayout"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp" />
+
+    <GridLayout
+        android:id="@+id/volleyballCourtLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/courtLabel"
+        android:columnCount="3"
+        android:rowCount="2"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp">
+
+        <EditText
+            android:id="@+id/position1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/circle_background"
+            android:gravity="center"
+            android:hint="P1"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/position2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/circle_background"
+            android:gravity="center"
+            android:hint="P2"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/position3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/circle_background"
+            android:gravity="center"
+            android:hint="P3"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/position4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/circle_background"
+            android:gravity="center"
+            android:hint="P4"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/position5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/circle_background"
+            android:gravity="center"
+            android:hint="P5"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/position6"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/circle_background"
+            android:gravity="center"
+            android:hint="P6"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/p1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="P1"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/p2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="P2"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/p3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="P3"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/p4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="P4"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/p5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="P5"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/p6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="P6"
+            android:textSize="18sp" />
+    </GridLayout>
 </RelativeLayout>
