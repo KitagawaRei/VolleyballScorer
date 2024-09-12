@@ -16,6 +16,19 @@
         android:textSize="18sp"
         android:textStyle="bold" />
 
+
+    <TextView
+        android:id="@+id/Netline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/homeLabel"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="462dp"
+        android:text="--------------------------"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
     <TextView
         android:id="@+id/homeLabel"
         android:layout_width="wrap_content"
@@ -128,111 +141,139 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="30dp" />
 
+    <!-- First GridLayout for positions 1-6 (First Set) -->
     <GridLayout
         android:id="@+id/volleyballCourtLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/courtLabel"
-        android:columnCount="3"
-        android:rowCount="2"
-        android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp">
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:columnCount="3"
+        android:rowCount="2">
 
+        <!-- First Set: Positions P1 - P6 -->
         <EditText
-            android:id="@+id/position1"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:id="@+id/position1_set1"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:background="@drawable/circle_background"
             android:gravity="center"
             android:hint="P1"
             android:inputType="number" />
 
         <EditText
-            android:id="@+id/position2"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:id="@+id/position2_set1"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:background="@drawable/circle_background"
             android:gravity="center"
             android:hint="P2"
             android:inputType="number" />
 
         <EditText
-            android:id="@+id/position3"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:id="@+id/position3_set1"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:background="@drawable/circle_background"
             android:gravity="center"
             android:hint="P3"
             android:inputType="number" />
 
         <EditText
-            android:id="@+id/position4"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:id="@+id/position4_set1"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:background="@drawable/circle_background"
             android:gravity="center"
             android:hint="P4"
             android:inputType="number" />
 
         <EditText
-            android:id="@+id/position5"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:id="@+id/position5_set1"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:background="@drawable/circle_background"
             android:gravity="center"
             android:hint="P5"
             android:inputType="number" />
 
         <EditText
-            android:id="@+id/position6"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:id="@+id/position6_set1"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:background="@drawable/circle_background"
             android:gravity="center"
             android:hint="P6"
             android:inputType="number" />
+    </GridLayout>
 
-        <TextView
-            android:id="@+id/p1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="P1"
-            android:textSize="18sp" />
+    <!-- Second GridLayout for positions 1-6 (Second Set) -->
+    <GridLayout
+        android:id="@+id/volleyballCourtLayout_set2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/volleyballCourtLayout"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="16dp"
+        android:columnCount="3"
+        android:rowCount="2">
 
-        <TextView
-            android:id="@+id/p2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="P2"
-            android:textSize="18sp" />
+        <!-- Second Set: Positions P1 - P6 -->
+        <EditText
+            android:id="@+id/position1_set2"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/circle_background"
+            android:gravity="center"
+            android:hint="P1"
+            android:inputType="number" />
 
-        <TextView
-            android:id="@+id/p3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="P3"
-            android:textSize="18sp" />
+        <EditText
+            android:id="@+id/position2_set2"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/circle_background"
+            android:gravity="center"
+            android:hint="P2"
+            android:inputType="number" />
 
-        <TextView
-            android:id="@+id/p4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="P4"
-            android:textSize="18sp" />
+        <EditText
+            android:id="@+id/position3_set2"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/circle_background"
+            android:gravity="center"
+            android:hint="P3"
+            android:inputType="number" />
 
-        <TextView
-            android:id="@+id/p5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="P5"
-            android:textSize="18sp" />
+        <EditText
+            android:id="@+id/position4_set2"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/circle_background"
+            android:gravity="center"
+            android:hint="P4"
+            android:inputType="number" />
 
-        <TextView
-            android:id="@+id/p6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="P6"
-            android:textSize="18sp" />
+        <EditText
+            android:id="@+id/position5_set2"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/circle_background"
+            android:gravity="center"
+            android:hint="P5"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/position6_set2"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/circle_background"
+            android:gravity="center"
+            android:hint="P6"
+            android:inputType="number" />
     </GridLayout>
 </RelativeLayout>

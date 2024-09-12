@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private EditText homeScore, awayScore;
     private Button addBtnHome, removeBtnHome, addBtnAway, removeBtnAway;
-    private TextView servingTeam, p1, p2, p3, p4, p5, p6;
+    private TextView servingTeam, position1_set1, position2_set1, position3_set1, position4_set1, position5_set1, position6_set1;
     private boolean isHomeServing = true; // Home starts serving by default
     private int[] playerPositions = {1, 2, 3, 4, 5, 6}; // Initialize player positions
 
@@ -29,19 +29,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         addBtnAway = findViewById(R.id.addBtnAway);
         removeBtnAway = findViewById(R.id.removeBtnAway);
         servingTeam = findViewById(R.id.servingTeam);
-        p1 = findViewById(R.id.p1);
-        p2 = findViewById(R.id.p2);
-        p3 = findViewById(R.id.p3);
-        p4 = findViewById(R.id.p4);
-        p5 = findViewById(R.id.p5);
-        p6 = findViewById(R.id.p6);
+        position1_set1 = findViewById(R.id.position1_set1);
+        position2_set1 = findViewById(R.id.position2_set1);
+        position3_set1 = findViewById(R.id.position3_set1);
+        position4_set1 = findViewById(R.id.position4_set1);
+        position5_set1 = findViewById(R.id.position5_set1);
+        position6_set1 = findViewById(R.id.position6_set1);
 
-        p1.setOnClickListener(this);
-        p2.setOnClickListener(this);
-        p3.setOnClickListener(this);
-        p4.setOnClickListener(this);
-        p5.setOnClickListener(this);
-        p6.setOnClickListener(this);
+        position1_set1.setOnClickListener(this);
+        position2_set1.setOnClickListener(this);
+        position3_set1.setOnClickListener(this);
+        position4_set1.setOnClickListener(this);
+        position5_set1.setOnClickListener(this);
+        position6_set1.setOnClickListener(this);
 
         updateServingTeam();
 
@@ -109,37 +109,55 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         System.arraycopy(playerPositions, 1, playerPositions, 0, playerPositions.length - 1);
         playerPositions[playerPositions.length - 1] = temp;
 
-        p1.setText(String.valueOf(playerPositions[0]));
-        p2.setText(String.valueOf(playerPositions[1]));
-        p3.setText(String.valueOf(playerPositions[2]));
-        p4.setText(String.valueOf(playerPositions[3]));
-        p5.setText(String.valueOf(playerPositions[4]));
-        p6.setText(String.valueOf(playerPositions[5]));
+        position1_set1.setText(String.valueOf(playerPositions[0]));
+        position2_set1.setText(String.valueOf(playerPositions[1]));
+        position3_set1.setText(String.valueOf(playerPositions[2]));
+        position4_set1.setText(String.valueOf(playerPositions[3]));
+        position5_set1.setText(String.valueOf(playerPositions[4]));
+        position6_set1.setText(String.valueOf(playerPositions[5]));
     }
 
     @Override
     public void onClick(View v) {
         // Handle clicks on player number views to allow input
         switch (v.getId()) {
-            case R.id.p1:
+            case R.id.position1_set1:
                 // Show dialog or input for editing player number 1
                 break;
-            case R.id.p2:
+            case R.id.position2_set1:
                 // Show dialog or input for editing player number 2
                 break;
-            case R.id.p3:
+            case R.id.position3_set1:
                 // Show dialog or input for editing player number 3
                 break;
-            case R.id.p4:
+            case R.id.position4_set1:
                 // Show dialog or input for editing player number 4
                 break;
-            case R.id.p5:
+            case R.id.position5_set1:
                 // Show dialog or input for editing player number 5
                 break;
-            case R.id.p6:
+            case R.id.position6_set1:
                 // Show dialog or input for editing player number 6
                 break;
-        }
-    }
 
+            case R.id.position1_set2:
+                // Show dialog or input for editing player number 1
+                break;
+            case R.id.position2_set2:
+                // Show dialog or input for editing player number 2
+                break;
+            case R.id.position3_set2:
+                // Show dialog or input for editing player number 3
+                break;
+            case R.id.position4_set2:
+                // Show dialog or input for editing player number 4
+                break;
+            case R.id.position5_set2:
+                // Show dialog or input for editing player number 5
+                break;
+            case R.id.position6_set2:
+                // Show dialog or input for editing player number 6
+                break;
+       }
+    }
 }
